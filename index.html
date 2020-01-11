@@ -228,6 +228,129 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://showhand88.github.io/2020/01/11/%5BLinux%5D%20%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AEIP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="showhand Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="守航的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/11/%5BLinux%5D%20%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AEIP/" itemprop="url">[Linux] 虚拟机配置IP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-11T10:31:00+08:00">
+                2020-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、编辑网卡的配置文件<br>vim /etc/sysconfig/network-scripts/ifcfg-ens33<br>2、添加配置信息<br>IPADDR=10.10.28.192(要和本机IP地址同一个网段 即Windows系统doc窗口输入命令ipconfig第三个IP地址)<br><img src="https://img-blog.csdnimg.cn/20191125211638747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NIT1VIQU5HODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>NETMASK=255.255.255.0<br>GATEWAY=10.10.28.1(非必要)<br>DNS1=8.8.8.8<br>3、修改配置信息<br>ONBOOT=yes<br>BOOTPROTO=static<br><img src="https://img-blog.csdnimg.cn/20191206215340697.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NIT1VIQU5HODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">这个是网络配置参数：</span><br><span class="line">BOOTPROTO=<span class="keyword">static</span>   静态IP</span><br><span class="line">BOOTPROTO=dhcp   动态IP</span><br><span class="line">BOOTPROTO=none   无（不指定）</span><br><span class="line">通常情况下是dhcp或者<span class="keyword">static</span>，通过指定方式的办法来获得地址，如果没有指定的话可能会出现问题</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果重新加载虚拟机快照，需要修改 HWaddr 的值（确保与虚拟机一致）<br>4、重启网卡<br>service network restart</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://showhand88.github.io/2019/10/20/helloshowhand/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -515,7 +638,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -556,7 +679,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
